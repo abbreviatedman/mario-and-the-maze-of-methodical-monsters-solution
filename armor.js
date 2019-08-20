@@ -1,41 +1,41 @@
 const armor = [
   {
-    name: 'cardboard box',
+    name: 'A cardboard box.',
     armorBonus: 0,
     bulletproof: false,
   },
   {
-    name: 'chain armor',
+    name: 'Chain armor.',
     armorBonus: 1,
     bulletproof: false,
   },
   {
-    name: 'plate armor',
+    name: 'Plate armor.',
     armorBonus: 2,
     bulletproof: false,
   },
   {
-    name: `police vest`,
+    name: `A police vest.`,
     armorBonus: 1,
     bulletproof: true,
   },
   {
-    name: `the flying spaghetti monster's colander`,
+    name: `The flying spaghetti monster's colander.`,
     armorBonus: 0,
     bulletproof: false
   },
   {
-    name: `the tank`,
+    name: `The tank.`,
     armorBonus: 3,
     bulletproof: false
   },
   {
-    name: `the armor of the fallen`,
+    name: `The armor of the fallen.`,
     armorBonus: 5,
     bulletproof: false
   },
   {
-    name: `RoboCop suit`,
+    name: `The RoboCop suit.`,
     armorBonus: 8,
     bulletproof: false
   },

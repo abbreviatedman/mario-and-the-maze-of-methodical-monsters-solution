@@ -1,7 +1,7 @@
 const player =  {
 	hitPoints: 100,
-	attackMin: 3,
-	attackMax: 5,
+	attackMin: 0,
+	attackMax: 3,
 	level: 1,
 	armor: armor[0],
 	weapon: weapons[0],
@@ -22,7 +22,7 @@ const player =  {
 
 	takeDamage(baseAttack) {
 		const damageTaken = baseAttack - this.armor.armorBonus
-		this.hitPoints -= damageTaken;
+		this.hitPoints -= Math.max(damageTaken, 0);
 		if (this.hitPoints <= 0) {
 			this.isAlive = false;
 		}
@@ -36,7 +36,12 @@ const player =  {
 	},
 
 	reset: function() {
-		player.isAlive = true;
 		player.hitPoints = 100;
+		player.attackMin = 3;
+		player.attackMax = 5;
+		player.level = 1;
+		player.armor = armor[0];
+		player.weapon = weapons[0];
+		player.isAlive = true;
 	}
 }

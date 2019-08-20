@@ -17,6 +17,7 @@
     color: white;
 }
 
-img {
-    padding: 30px;
+img, button {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
