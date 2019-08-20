@@ -26,10 +26,12 @@ function attackRound() {
       let droppedItem = '';
       if (droppedItemType === 'armor') {
         droppedItem = player.armor.name;
-      } else {
+      } else if (droppedItemType === 'weapon') {
         droppedItem = player.weapon.name
+      } else {
+        droppedItem = '... an item you already had';
       }
-      updateResult(`You slayed the monster and received ${droppedItem.toUpperCase()}! But you'll need it, because... here comes another monster!`);
+      updateResult(`You slayed the monster and received ${droppedItem.toUpperCase()}! But you'll need it, because... here comes a BIGGER monster!`);
       updateInventory();
     }
   }
@@ -43,13 +45,11 @@ function getAttackDamage(min, max) {
 
 function updateInventory() {
   document.querySelector('#weapon-name')
-    .innerText = player.weapon.name[0].toUpperCase()
-      + player.weapon.name.slice(1);
+      .innerText = `${player.weapon.name[0].toUpperCase()}${player.weapon.name.slice(1)}.`;
   document.querySelector('#weapon-flavor-text')
     .innerText = player.weapon.flavorText;
   document.querySelector('#armor-name')
-  .innerText = player.armor.name[0].toUpperCase()
-  + player.armor.name.slice(1);
+  .innerText = `${player.armor.name[0].toUpperCase()}${player.armor.name.slice(1)}.`;
 }
 
 function updateHealthBars() {
@@ -111,7 +111,7 @@ function reset() {
   i = 0;
   monsters.splice(0);
 
-  while (monsters.length < 5) {
+  while (monsters.length < 8) {
     monsters.push(newMonster(monsters.length));
   }
 

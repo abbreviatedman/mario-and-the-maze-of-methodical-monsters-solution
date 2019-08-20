@@ -31,12 +31,20 @@ function newMonster(level) {
 		dropItem: function() {
 			if (Math.random() >= 0.5) {
 				const randomArmor = Math.floor(Math.random() * armor.length + this.level);
-				player.armor = armor[Math.min(randomArmor, armor.length - 1)]
-
+				const newArmor = armor[Math.min(randomArmor, armor.length - 1)];
+				if (newArmor === player.armor) {
+					return '';
+				}
+				player.armor = newArmor;
+				
 				return `armor`;
 			} else {
 				const randomWeapon = Math.floor(Math.random() * weapons.length + this.level);
-				player.weapon = weapons[Math.min(randomWeapon, weapons.length - 1)]
+				const newWeapon = weapons[Math.min(randomWeapon, weapons.length - 1)];
+				if (newWeapon === player.weapon) {
+					return '';
+				}
+				player.weapon = newWeapon;
 
 				return `weapon`;
 			}
